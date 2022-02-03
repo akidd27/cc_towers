@@ -37,8 +37,11 @@ public class Hotel {
     }
 
     public void checkIn(Guest guest, Room room) {
-        room.addGuest(guest);
-        guest.setCheckedIn(true);
+        if (room.getNumberOfGuests() == 0) {
+            room.addGuest(guest);
+            guest.setCheckedIn(true);
+        }
+
     }
 
     public void checkOut(Guest guest, Room room) {
@@ -65,5 +68,16 @@ public class Hotel {
 
     public int getNumberOfDiningRooms(){
         return this.diningRooms.size();
+    }
+
+    public ArrayList<Bedroom> getVacantRooms() {
+        ArrayList vacantRooms = new ArrayList<Bedroom>();
+        for (Bedroom bedroom : this.bedrooms) {
+            if (bedroom.getNumberOfGuests() == 0) {
+                vacantRooms.add(bedroom);
+            }
+        }
+
+        return vacantRooms;
     }
 }
