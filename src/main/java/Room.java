@@ -13,6 +13,10 @@ public abstract class Room {
         return this.roomType.getValue();
     }
 
+    public double getNightlyRate(){
+        return this.roomType.getNightlyRate();
+    }
+
     public int getNumberOfGuests() {
         return guests.size();
     };

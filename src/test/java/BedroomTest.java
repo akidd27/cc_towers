@@ -27,5 +27,9 @@ public class BedroomTest {
         assertEquals(0, bedroom.getNumberOfGuests());
     }
 
+    @Test
+    public void hasNightlyRate(){
+        assertEquals(25.00, bedroom.getNightlyRate(), 0.00);
+    }
 
 }
